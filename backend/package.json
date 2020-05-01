@@ -1,0 +1,21 @@
+{
+  "name": "be_the_hero",
+  "version": "1.0.0",
+  "description": "A simple test app for learning node and react.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "André Laranjeira",
+  "license": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.21.0",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
