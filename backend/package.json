@@ -1,14 +1,14 @@
 {
   "name": "be_the_hero",
   "version": "1.0.0",
-  "description": "A simple test app for learning node and react.",
+  "description": "Backend API of an app that allows NGOs to seek people interested in helping them in certain tasks or cases. Database modeling was done with the knex package.",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "André Laranjeira",
-  "license": "",
+  "license": "(MIT OR UNLICENSE)",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
