@@ -9,6 +9,7 @@ This app was **not my idea.** It follows a tutorial for node and react from the 
 ## Project summary
 
 * Backend: Backend API built with node js. Database modeling was done with the `knex` package.
+* Frontend: Website frontend made with react. Services api was done with the `axios` package.
 
 ## Change summary
 
@@ -17,6 +18,11 @@ This app was **not my idea.** It follows a tutorial for node and react from the 
 * Database tables all have self-incrementing unsigned integers as ids and timestamp columns.
 * Added error responses to some of the corner cases of request usage.
 * Added a conditional to prevent two NGOs from obtaining the same passkey.
+
+#### Frontend
+* Translated website text from portuguese to english.
+* Used `.scss` for the stylesheets instead of the regular `.css`.
+* Refactored certain css classes to avoid code repetition.
 
 ## Licensing
 
