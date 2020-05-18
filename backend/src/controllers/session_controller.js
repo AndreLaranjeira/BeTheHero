@@ -16,8 +16,10 @@ module.exports = {
         {error: 'Authorization does not match any credential in database!'}
       );
 
-    else
-      return response.json(ngo);
+    else {
+      const name = ngo['NAME'];
+      return response.json({name});
+    }
 
   }
 }

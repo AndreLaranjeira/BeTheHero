@@ -39,10 +39,13 @@ module.exports = {
     const incident = await connection('INCIDENTS').select('NGO_ID').where(
       {id: incident_id}
     ).first();
-    console.log(incident);
 
     // Check the authorization:
-    if(ngo == null || incident['NGO_ID'] != ngo['ID'])
+    if(incident == null)
+      return response.status(404).json(
+        {error: 'Incident does not exist!'}
+      );
+    else if(ngo == null || incident['NGO_ID'] !== ngo['ID'])
       return response.status(401).json(
         {error: 'Operation not permitted!'}
       );
