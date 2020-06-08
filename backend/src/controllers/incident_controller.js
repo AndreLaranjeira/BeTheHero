@@ -73,11 +73,11 @@ module.exports = {
       .offset((page - 1) * page_length)
       .select([
         'INCIDENTS.*',
-        'NGOS.NAME',
-        'NGOS.EMAIL',
-        'NGOS.WHATSAPP',
-        'NGOS.CITY',
-        'NGOS.STATE'
+        'NGOS.NAME as NGO_NAME',
+        'NGOS.EMAIL as NGO_EMAIL',
+        'NGOS.WHATSAPP as NGO_WHATSAPP',
+        'NGOS.CITY as NGO_CITY',
+        'NGOS.STATE as NGO_STATE'
       ]);
 
     return response.json(incidents);

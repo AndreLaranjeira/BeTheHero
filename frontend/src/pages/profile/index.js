@@ -24,17 +24,6 @@ export default function Profile() {
   // State variables.
   const [incidents, setIncidents] = useState([]);
 
-  // Page effects.
-  useEffect(() => {
-    api.get('profile', {
-      headers: {
-        Authorization: ngoPasskey
-      }
-    }).then(response => {
-      setIncidents(response.data);
-    })
-  }, [ngoPasskey]);
-
   // Handler functions.
   async function handleDeleteIncident(id) {
     try {
@@ -54,6 +43,17 @@ export default function Profile() {
     localStorage.clear();
     history.push('/');
   };
+
+  // Page effects.
+  useEffect(() => {
+    api.get('profile', {
+      headers: {
+        Authorization: ngoPasskey
+      }
+    }).then(response => {
+      setIncidents(response.data);
+    })
+  }, [ngoPasskey]);
 
   // JSX returned.
   return(

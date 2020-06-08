@@ -43,7 +43,7 @@ export default function NewIncident() {
       });
       history.push('/profile');
     } catch (err) {
-      alert('Error on incident creation! Please try again.');
+      alert('Error on case creation! Please try again.');
     }
 
   };
