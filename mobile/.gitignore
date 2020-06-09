@@ -1,0 +1,25 @@
+# Environment files:
+.DS_Store
+*.env
+
+# Package files:
+node_modules/**/*
+.expo/*
+
+# Debug files:
+npm-debug.*
+
+# Web files:
+web-build/
+web-report/
+
+# Yarn lockfile (use `yarn import` to use yarn):
+yarn.lock
+
+# Other files:
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*

@@ -1,11 +1,10 @@
 // Package imports:
 import React from 'react';
-
-// Style imports:
-import './global.scss';
+import 'intl';
+import 'intl/locale-data/jsonp/en-US'
 
 // Component imports:
-import Routes from './routes';
+import Routes from './src/routes';
 
 // Component:
 export default function App() {

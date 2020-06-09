@@ -2,27 +2,34 @@
 
 ## Description
 
-An app built with node and react that allows NGOs to seek people interested in helping them in certain tasks or cases. Be the hero and help out those in need or support a cause of your interest!
+A website and app built with node, react and react native that allow NGOs to seek people interested in helping them in certain tasks or cases. Be the hero and help out those in need or support a cause of your interest!
 
-This app was **not my idea.** It follows a tutorial for node and react from the Omnistack week 11, made by [Rocketseat](https://rocketseat.com.br/). The idea, assets and source code for this project were all provided by them, along with the videos teaching me how to make this project. However, certain changes, authored by me, were made to the source code either to improve the project, to challenge myself or because I felt like doing them.
+This app was **not my idea.** It follows a tutorial for node, react and react native from the Omnistack week 11, made by [Rocketseat](https://rocketseat.com.br/). The idea, assets and source code for this project were all provided by them, along with the videos teaching me how to make this project. However, certain changes, authored by me, were made to the source code either to improve the project, to challenge myself or because I felt like doing them.
 
 ## Project summary
 
-* Backend: Backend API built with node js. Database modeling was done with the `knex` package.
-* Frontend: Website frontend made with react. Services api was done with the `axios` package.
+* Backend: Backend API built with node js. It is used both by the website frontend and by the mobile application. Database modeling was done with the `knex` package.
+* Frontend: Website frontend made with react. Allows NGOs to sign up and register cases. Services api was done with the `axios` package.
+* Mobile: Mobile frontend made with react native and expo. Allows users to find NGO cases and to contact the NGOs. Services api was done with the `axios` package. **Important:** To run the app, create the `.env` file in the mobile folder and add your IP address in the `HOST_IP_ADDRESS` environment variable.
 
 ## Change summary
 
-#### Backend
+### Backend
 * Translated database table and column names from portuguese to english.
 * Database tables all have self-incrementing unsigned integers as ids and timestamp columns.
 * Added error responses to some of the corner cases of request usage.
 * Added a conditional to prevent two NGOs from obtaining the same passkey.
 
-#### Frontend
+### Frontend
 * Translated website text from portuguese to english.
 * Used `.scss` for the stylesheets instead of the regular `.css`.
 * Refactored certain css classes to avoid code repetition.
+
+### Mobile
+* Translated mobile text from portuguese to english.
+* Made the WhatsApp contact button appear only if the NGO had a WhatsApp contact number.
+* Moved the localhost URL used in the services API to an environment file (`.env`).
+* Minor style changes.
 
 ## Licensing
 
