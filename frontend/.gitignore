@@ -20,3 +20,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Yarn lockfile (use `yarn import` to use yarn):
+yarn.lock
