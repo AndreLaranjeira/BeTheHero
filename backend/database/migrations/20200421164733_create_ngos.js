@@ -7,7 +7,7 @@ exports.up = function(knex) {
     table.string('NAME').notNullable();
     table.string('EMAIL').notNullable();
     table.string('WHATSAPP');
-    table.string('CITY')
+    table.string('CITY');
     table.string('STATE', 2).notNullable();
 
     table.timestamps();

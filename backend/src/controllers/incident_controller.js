@@ -23,9 +23,11 @@ module.exports = {
     }
 
     else
-      return response.status(400).json(
-        {error: 'Authorization does not match any credential in database!'}
-      );
+      return response.status(400).json({
+        statusCode: 400,
+        error: 'Bad request',
+        message: 'Authorization does not match any credential in database!'
+      });
   },
 
   async delete(request, response) {
@@ -42,13 +44,17 @@ module.exports = {
 
     // Check the authorization:
     if(incident == null)
-      return response.status(404).json(
-        {error: 'Incident does not exist!'}
-      );
+      return response.status(404).json({
+        statusCode: 404,
+        error: 'Not found',
+        message: 'Incident does not exist!'
+      });
     else if(ngo == null || incident['NGO_ID'] !== ngo['ID'])
-      return response.status(401).json(
-        {error: 'Operation not permitted!'}
-      );
+      return response.status(401).json({
+        statusCode: 401,
+        error: 'Unauthorized',
+        message: 'Operation not permitted!'
+      });
     else {
       await connection('INCIDENTS').where({id: incident_id}).delete();
       return response.json(

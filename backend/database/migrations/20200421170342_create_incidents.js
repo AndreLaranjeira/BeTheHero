@@ -8,7 +8,7 @@ exports.up = function(knex) {
     table.decimal('VALUE').notNullable();
 
     table.integer('NGO_ID').unsigned().notNullable();
-    table.foreign('NGO_ID').references('ID').on('NGO')
+    table.foreign('NGO_ID').references('ID').on('NGO');
 
     table.timestamps();
   });

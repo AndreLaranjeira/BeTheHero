@@ -19,6 +19,10 @@ This app was **not my idea.** It follows a tutorial for node, react and react na
 * Database tables all have self-incrementing unsigned integers as ids and timestamp columns.
 * Added error responses to some of the corner cases of request usage.
 * Added a conditional to prevent two NGOs from obtaining the same passkey.
+* Created validators for all routes \(the original project include only one as an example\).
+* Added seeds to the test database.
+* Created integration tests for all routes \(the original project include only one as an example\).
+* Changes to project structure.
 
 ### Frontend
 * Translated website text from portuguese to english.

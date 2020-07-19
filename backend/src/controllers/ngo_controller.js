@@ -1,8 +1,6 @@
-// Package imports:
-const crypto = require('crypto');
-
 // Module imports:
 const connection = require('../../database/connection');
+const generatePasskey = require('../utils/generatePasskey');
 
 // Export module:
 module.exports = {
@@ -14,11 +12,11 @@ module.exports = {
     // Read all the existing passkeys in the database:
     const existing_passkeys = await connection('NGOS').select('PASSKEY');
 
-    // Generate NGO an UNIQUE passkey:
-    let passkey = crypto.randomBytes(4).toString('HEX');
+    // Generate an UNIQUE passkey for the NGO:
+    let passkey = generatePasskey();
 
     while (existing_passkeys.includes(passkey))
-      passkey = crypto.randomBytes(4).toString('HEX');
+      passkey = generatePasskey();
 
     // Insert data into table:
     await connection('NGOS').insert({

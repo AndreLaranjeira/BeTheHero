@@ -17,9 +17,11 @@ module.exports = {
     }
 
     else
-      return response.status(400).json(
-        {error: 'Authorization does not match any credential in database!'}
-      );
+      return response.status(400).json({
+         statusCode: 400,
+         error: 'Bad request',
+         message: 'Authorization does not match any credential in database!'
+      });
 
   }
 }

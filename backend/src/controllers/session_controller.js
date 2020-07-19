@@ -8,13 +8,15 @@ module.exports = {
 
     // Locate NGO via passkey.
     const ngo = await connection('NGOS').select('NAME').where({
-      passkey: passkey
+      passkey: passkey.toLowerCase()
     }).first();
 
     if(ngo == null)
-      return response.status(400).json(
-        {error: 'Authorization does not match any credential in database!'}
-      );
+      return response.status(400).json({
+        statusCode: 400,
+        error: 'Bad request',
+        message: 'Authorization does not match any credential in database!'
+      });
 
     else {
       const name = ngo['NAME'];
