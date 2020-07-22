@@ -1,6 +1,6 @@
 // Module imports:
-const connection = require('../../database/connection');
-const generatePasskey = require('../utils/generatePasskey');
+const connection = require("../../database/connection");
+const generatePasskey = require("../utils/generatePasskey");
 
 // Export module:
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
     const {name, email, whatsapp, city, state} = request.body;
 
     // Read all the existing passkeys in the database:
-    const existing_passkeys = await connection('NGOS').select('PASSKEY');
+    const existing_passkeys = await connection("NGOS").select("PASSKEY");
 
     // Generate an UNIQUE passkey for the NGO:
     let passkey = generatePasskey();
@@ -19,7 +19,7 @@ module.exports = {
       passkey = generatePasskey();
 
     // Insert data into table:
-    await connection('NGOS').insert({
+    await connection("NGOS").insert({
       PASSKEY: passkey,
       NAME: name,
       EMAIL: email,
@@ -35,7 +35,7 @@ module.exports = {
   },
 
   async index(request, response) {
-    const ngos = await connection('NGOS').select('*');
+    const ngos = await connection("NGOS").select("*");
     return response.json(ngos);
   }
-}
+};

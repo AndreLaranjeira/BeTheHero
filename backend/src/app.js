@@ -1,10 +1,10 @@
 // Package imports:
-const {errors} = require('celebrate');
-const cors = require('cors');
-const express = require('express');
+const {errors} = require("celebrate");
+const cors = require("cors");
+const express = require("express");
 
 // Module imports:
-const routes = require('./routes');
+const routes = require("./routes");
 
 // Application configuration:
 const app = express();
