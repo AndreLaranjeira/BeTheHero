@@ -1,5 +1,7 @@
 # BeTheHero
 
+![CI](https://github.com/AndreLaranjeira/BeTheHero/workflows/CI/badge.svg?branch=master)
+
 ## Description
 
 A website and app built with node, react and react native that allow NGOs to seek people interested in helping them in certain tasks or cases. Be the hero and help out those in need or support a cause of your interest!
