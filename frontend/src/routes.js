@@ -1,12 +1,12 @@
 // Package imports:
-import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import React from "react";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 // Component imports:
-import Logon from './pages/logon';
-import NewIncident from './pages/new_incident';
-import Profile from './pages/profile';
-import Register from './pages/register';
+import Logon from "./pages/logon";
+import NewIncident from "./pages/new_incident";
+import Profile from "./pages/profile";
+import Register from "./pages/register";
 
 // Component:
 export default function Routes() {

@@ -1,16 +1,16 @@
 // Package imports:
-import React, {useEffect, useState} from 'react';
-import {FiPower, FiTrash2} from 'react-icons/fi';
-import {Link, useHistory} from 'react-router-dom';
+import React, {useEffect, useState} from "react";
+import {FiPower, FiTrash2} from "react-icons/fi";
+import {Link, useHistory} from "react-router-dom";
 
 // Module imports:
-import api from '../../services/api';
+import api from "../../services/api";
 
 // Style imports:
-import './styles.scss';
+import "./styles.scss";
 
 // Asset imports:
-import logoImg from '../../assets/logo.svg';
+import logoImg from "../../assets/logo.svg";
 
 // Component:
 export default function Profile() {
@@ -18,8 +18,8 @@ export default function Profile() {
   const history = useHistory();
 
   // Local storage.
-  const ngoPasskey = localStorage.getItem('ngoPasskey');
-  const ngoName = localStorage.getItem('ngoName');
+  const ngoPasskey = localStorage.getItem("ngoPasskey");
+  const ngoName = localStorage.getItem("ngoName");
 
   // State variables.
   const [incidents, setIncidents] = useState([]);
@@ -33,26 +33,26 @@ export default function Profile() {
         }
       });
 
-      setIncidents(incidents.filter(incident => incident.ID !== id))
+      setIncidents(incidents.filter(incident => incident.ID !== id));
     } catch (err) {
-      alert('Error on case deletion! Please try again.');
+      alert("Error on case deletion! Please try again.");
     }
-  };
+  }
 
   function handleLogout() {
     localStorage.clear();
-    history.push('/');
-  };
+    history.push("/");
+  }
 
   // Page effects.
   useEffect(() => {
-    api.get('profile', {
+    api.get("profile", {
       headers: {
         Authorization: ngoPasskey
       }
     }).then(response => {
       setIncidents(response.data);
-    })
+    });
   }, [ngoPasskey]);
 
   // JSX returned.
@@ -78,8 +78,8 @@ export default function Profile() {
 
             <strong>VALUE:</strong>
             <p>
-              {Intl.NumberFormat('en-US', {style: "currency", currency: "USD"})
-               .format(incident.VALUE)}
+              {Intl.NumberFormat("en-US", {style: "currency", currency: "USD"})
+                .format(incident.VALUE)}
             </p>
             <button onClick={() => handleDeleteIncident(incident.ID)} type="button">
               <FiTrash2 color="#A8A8B3" size={20}/>

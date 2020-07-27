@@ -1,16 +1,16 @@
 // Package imports:
-import React, {useState} from 'react';
-import {FiArrowLeft} from 'react-icons/fi';
-import {Link, useHistory} from 'react-router-dom';
+import React, {useState} from "react";
+import {FiArrowLeft} from "react-icons/fi";
+import {Link, useHistory} from "react-router-dom";
 
 // Module imports:
-import api from '../../services/api';
+import api from "../../services/api";
 
 // Style imports:
-import './styles.scss';
+import "./styles.scss";
 
 // Asset imports:
-import logoImg from '../../assets/logo.svg';
+import logoImg from "../../assets/logo.svg";
 
 // Component:
 export default function NewIncident() {
@@ -18,12 +18,12 @@ export default function NewIncident() {
   const history = useHistory();
 
   // Local storage.
-  const ngoPasskey = localStorage.getItem('ngoPasskey');
+  const ngoPasskey = localStorage.getItem("ngoPasskey");
 
   // State variables.
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [value, setValue] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [value, setValue] = useState("");
 
   // Handler functions.
   async function handleNewIncident(e){
@@ -36,17 +36,17 @@ export default function NewIncident() {
     };
 
     try {
-      await api.post('incidents', data, {
+      await api.post("incidents", data, {
         headers: {
           Authorization: ngoPasskey
         }
       });
-      history.push('/profile');
+      history.push("/profile");
     } catch (err) {
-      alert('Error on case creation! Please try again.');
+      alert("Error on case creation! Please try again.");
     }
 
-  };
+  }
 
   // JSX returned.
   return(

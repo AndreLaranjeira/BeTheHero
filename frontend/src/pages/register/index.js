@@ -1,16 +1,16 @@
 // Package imports:
-import React, {useState} from 'react';
-import {FiArrowLeft} from 'react-icons/fi';
-import {Link, useHistory} from 'react-router-dom';
+import React, {useState} from "react";
+import {FiArrowLeft} from "react-icons/fi";
+import {Link, useHistory} from "react-router-dom";
 
 // Module imports:
-import api from '../../services/api';
+import api from "../../services/api";
 
 // Style imports:
-import './styles.scss';
+import "./styles.scss";
 
 // Asset imports:
-import logoImg from '../../assets/logo.svg';
+import logoImg from "../../assets/logo.svg";
 
 // Component:
 export default function Register() {
@@ -18,11 +18,11 @@ export default function Register() {
   const history = useHistory();
 
   // State variables.
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [city, setCity] = useState('');
-  const [state, setState] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
 
   // Handler functions.
   async function handleRegister(e){
@@ -37,14 +37,14 @@ export default function Register() {
     };
 
     try {
-      const response = await api.post('ngos', data);
+      const response = await api.post("ngos", data);
       alert(`Your access passkey: ${response.data.passkey}`);
-      history.push('/');
+      history.push("/");
     } catch (err) {
-      alert('Error on registration! Please try again.');
+      alert("Error on registration! Please try again.");
     }
 
-  };
+  }
 
   // JSX returned.
   return(
