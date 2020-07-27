@@ -88,4 +88,4 @@ module.exports = {
 
     return response.json(incidents);
   }
-};
+}

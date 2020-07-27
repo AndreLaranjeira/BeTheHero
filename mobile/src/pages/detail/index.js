@@ -9,7 +9,7 @@ import {useNavigation, useRoute} from "@react-navigation/native";
 import styles from "./styles";
 
 // Asset imports:
-import logoImg from "../../assets/logo.png";
+import logoImg from ''../../assets/logo.png';
 
 // Component:
 export default function Detail() {

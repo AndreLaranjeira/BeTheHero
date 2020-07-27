@@ -1,6 +1,6 @@
 // Package imports:
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom';
 
 // Component imports:
 import App from "./App";
@@ -11,4 +11,4 @@ ReactDOM.render(
     <App />
   </React.StrictMode>,
   document.getElementById("root")
-);
+)
