@@ -1,11 +1,11 @@
 // Package imports:
-const knex = require('knex');
+const knex = require("knex");
 
 // File imports:
-const configuration = require('../knexfile');
+const configuration = require("../knexfile");
 
 // Create connection:
-const db_settings = process.env.NODE_ENV === 'test' ? configuration.test :
+const db_settings = process.env.NODE_ENV === "test" ? configuration.test :
   configuration.development;
 const connection = knex(db_settings);
 

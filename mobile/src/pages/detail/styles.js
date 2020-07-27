@@ -1,6 +1,6 @@
 // Package imports:
-import {StyleSheet} from 'react-native';
-import Constants from 'expo-constants';
+import {StyleSheet} from "react-native";
+import Constants from "expo-constants";
 
 // Stylesheet:
 export default StyleSheet.create({
@@ -11,54 +11,54 @@ export default StyleSheet.create({
   },
 
   action: {
-    alignItems: 'center',
-    backgroundColor: '#E02041',
+    alignItems: "center",
+    backgroundColor: "#E02041",
     borderRadius: 8,
     height: 50,
-    justifyContent: 'center',
-    width: '48%'
+    justifyContent: "center",
+    width: "48%"
   },
 
   actionText: {
-    color: '#FFF',
+    color: "#FFF",
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   },
 
   actions: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 16
   },
 
   contactBox: {
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     borderRadius: 8,
     marginBottom: 16,
     padding: 24
   },
 
   header: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
 
   heroDescription: {
-    color: '#737380',
+    color: "#737380",
     fontSize: 16,
     marginTop: 16
   },
 
   heroTitle: {
-    color: '#13131A',
+    color: "#13131A",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     lineHeight: 30
   },
 
   incident: {
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     borderRadius: 8,
     marginBottom: 16,
     marginTop: 30,
@@ -66,14 +66,14 @@ export default StyleSheet.create({
   },
 
   incidentProperty: {
-    color: '#41414D',
+    color: "#41414D",
     fontSize: 15,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 24,
   },
 
   incidentValue: {
-    color: '#737380',
+    color: "#737380",
     fontSize: 16,
     marginTop: 4
   }

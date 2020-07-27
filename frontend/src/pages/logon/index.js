@@ -1,17 +1,17 @@
 // Package imports:
-import React, {useState} from 'react';
-import {FiLogIn} from 'react-icons/fi';
-import {Link, useHistory} from 'react-router-dom';
+import React, {useState} from "react";
+import {FiLogIn} from "react-icons/fi";
+import {Link, useHistory} from "react-router-dom";
 
 // Module imports:
-import api from '../../services/api';
+import api from "../../services/api";
 
 // Style imports:
-import './styles.scss';
+import "./styles.scss";
 
 // Asset imports:
-import heroesImg from '../../assets/heroes.png';
-import logoImg from '../../assets/logo.svg';
+import heroesImg from "../../assets/heroes.png";
+import logoImg from "../../assets/logo.svg";
 
 // Component:
 export default function Logon() {
@@ -19,24 +19,24 @@ export default function Logon() {
   const history = useHistory();
 
   // State variables.
-  const[passkey, setPasskey] = useState('');
+  const[passkey, setPasskey] = useState("");
 
   // Handler functions.
   async function handleLogin(e) {
     e.preventDefault();
 
     try {
-      const response = await api.post('sessions', {passkey});
+      const response = await api.post("sessions", {passkey});
 
-      localStorage.setItem('ngoPasskey', passkey);
-      localStorage.setItem('ngoName', response.data.name);
+      localStorage.setItem("ngoPasskey", passkey);
+      localStorage.setItem("ngoName", response.data.name);
 
-      history.push('/profile');
+      history.push("/profile");
     } catch (err) {
-      alert('Error on logon! Please try again.');
+      alert("Error on logon! Please try again.");
     }
 
-  };
+  }
 
   // JSX returned.
   return(

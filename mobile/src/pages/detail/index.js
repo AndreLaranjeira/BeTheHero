@@ -1,15 +1,15 @@
 // Package imports:
-import React from 'react';
-import {Feather} from '@expo/vector-icons';
-import * as MailComposer from 'expo-mail-composer';
-import {Image, Linking, Text, TouchableOpacity, View} from 'react-native';
-import {useNavigation, useRoute} from '@react-navigation/native';
+import React from "react";
+import {Feather} from "@expo/vector-icons";
+import * as MailComposer from "expo-mail-composer";
+import {Image, Linking, Text, TouchableOpacity, View} from "react-native";
+import {useNavigation, useRoute} from "@react-navigation/native";
 
 // Style imports:
-import styles from './styles';
+import styles from "./styles";
 
 // Asset imports:
-import logoImg from '../../assets/logo.png';
+import logoImg from "../../assets/logo.png";
 
 // Component:
 export default function Detail() {
@@ -23,14 +23,14 @@ export default function Detail() {
   // Constants.
   const caseMessage = `Hello, ${incident.NGO_NAME}. I am contacting you ` +
     `because I would like to help you on the case "${incident.TITLE}", which ` +
-    `is valued at ` +
-    `${Intl.NumberFormat('en-US', {style: "currency", currency: "USD"})
+    "is valued at " +
+    `${Intl.NumberFormat("en-US", {style: "currency", currency: "USD"})
       .format(incident.VALUE)}.`;
 
   // Functions.
   function navigateBack() {
     navigation.goBack();
-  };
+  }
 
   function sendMail() {
     MailComposer.composeAsync({
@@ -38,11 +38,11 @@ export default function Detail() {
       recipients: [`${incident.NGO_EMAIL}`],
       body: caseMessage
     });
-  };
+  }
 
   function sendWhatsApp() {
     Linking.openURL(`whatsapp://send?phone=${incident.NGO_WHATSAPP}&text=${caseMessage}`);
-  };
+  }
 
   // JSX returned.
   return(
@@ -55,13 +55,13 @@ export default function Detail() {
       </View>
       <View style={styles.incident}>
         <Text style={[styles.incidentProperty, {marginTop: 0}]}>NGO:</Text>
-        <Text style={styles.incidentValue}>{incident.NGO_NAME} ({incident.NGO_CITY ? incident.NGO_CITY + ', ' : ''}{incident.NGO_STATE})</Text>
+        <Text style={styles.incidentValue}>{incident.NGO_NAME} ({incident.NGO_CITY ? incident.NGO_CITY + ", " : ""}{incident.NGO_STATE})</Text>
         <Text style={styles.incidentProperty}>Case:</Text>
         <Text style={styles.incidentValue}>{incident.TITLE}</Text>
         <Text style={styles.incidentProperty}>Value:</Text>
         <Text style={styles.incidentValue}>
-          {Intl.NumberFormat('en-US', {style: "currency", currency: "USD"})
-           .format(incident.VALUE)}
+          {Intl.NumberFormat("en-US", {style: "currency", currency: "USD"})
+            .format(incident.VALUE)}
         </Text>
       </View>
       <View style={styles.contactBox}>

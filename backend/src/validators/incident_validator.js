@@ -1,8 +1,8 @@
 // Package imports:
-const {celebrate, Joi, Segments} = require('celebrate');
+const {celebrate, Joi, Segments} = require("celebrate");
 
 // Module imports:
-const Patterns = require('../utils/validation_patterns');
+const Patterns = require("../utils/validation_patterns");
 
 // Export module:
 module.exports = {
@@ -28,4 +28,4 @@ module.exports = {
       page: Joi.number()
     })
   })
-}
+};

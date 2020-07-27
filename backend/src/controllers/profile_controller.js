@@ -1,5 +1,5 @@
 // Module imports:
-const connection = require('../../database/connection');
+const connection = require("../../database/connection");
 
 // Export module:
 module.exports = {
@@ -7,21 +7,21 @@ module.exports = {
     const ngo_passkey = request.headers.authorization;
 
     // Find the corresponding NGO ID.
-    const [ngo] = await connection('NGOS').select('ID').where({passkey: ngo_passkey});
+    const [ngo] = await connection("NGOS").select("ID").where({passkey: ngo_passkey});
 
     if(ngo != null) {
-      const incidents = await connection('INCIDENTS').where(
-        {NGO_ID: ngo['ID']}
-      ).select('*');
+      const incidents = await connection("INCIDENTS").where(
+        {NGO_ID: ngo["ID"]}
+      ).select("*");
       return response.json(incidents);
     }
 
     else
       return response.status(400).json({
-         statusCode: 400,
-         error: 'Bad request',
-         message: 'Authorization does not match any credential in database!'
+        statusCode: 400,
+        error: "Bad request",
+        message: "Authorization does not match any credential in database!"
       });
 
   }
-}
+};

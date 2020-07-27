@@ -23,17 +23,23 @@ This app was **not my idea.** It follows a tutorial for node, react and react na
 * Added seeds to the test database.
 * Created integration tests for all routes \(the original project include only one as an example\).
 * Changes to project structure.
+* Added ESLinter configuration for linting and formatting.
 
 ### Frontend
 * Translated website text from portuguese to english.
 * Used `.scss` for the stylesheets instead of the regular `.css`.
 * Refactored certain css classes to avoid code repetition.
+* Added ESLinter configuration for linting and formatting.
 
 ### Mobile
 * Translated mobile text from portuguese to english.
 * Made the WhatsApp contact button appear only if the NGO had a WhatsApp contact number.
 * Moved the localhost URL used in the services API to an environment file (`.env`).
 * Minor style changes.
+* Added ESLinter configuration for linting and formatting.
+
+### Github
+* Created workflow to run ESLint on all project folders.
 
 ## Licensing
 
