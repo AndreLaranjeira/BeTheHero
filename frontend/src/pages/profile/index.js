@@ -4,7 +4,7 @@ import {FiPower, FiTrash2} from "react-icons/fi";
 import {Link, useHistory} from "react-router-dom";
 
 // Module imports:
-import api from "../../services/api";
+import api from '../../services/api';
 
 // Style imports:
 import "./styles.scss";
@@ -88,5 +88,5 @@ export default function Profile() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

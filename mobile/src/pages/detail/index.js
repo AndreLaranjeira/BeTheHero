@@ -6,10 +6,10 @@ import {Image, Linking, Text, TouchableOpacity, View} from "react-native";
 import {useNavigation, useRoute} from "@react-navigation/native";
 
 // Style imports:
-import styles from "./styles";
+import styles from "./styles"
 
 // Asset imports:
-import logoImg from "../../assets/logo.png";
+import logoImg from '../../assets/logo.png';
 
 // Component:
 export default function Detail() {

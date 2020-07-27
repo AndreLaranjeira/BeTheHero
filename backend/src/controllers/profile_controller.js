@@ -1,5 +1,5 @@
 // Module imports:
-const connection = require("../../database/connection");
+const connection = require('../../database/connection');
 
 // Export module:
 module.exports = {
@@ -24,4 +24,4 @@ module.exports = {
       });
 
   }
-};
+}
