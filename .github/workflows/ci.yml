@@ -1,0 +1,51 @@
+# Workflow to run tests and lint the code on pull requests and pushes to master.
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+          node-version: 14
+
+    - name: Running tests on backend
+      run: |
+        npm ci
+        npm test
+      working-directory: backend
+
+  linting:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+          node-version: 14
+
+    - name: Linting backend
+      run: |
+        npm ci
+        npm run lint
+      working-directory: backend
+
+    - name: Linting frontend
+      run: |
+        npm ci
+        npm run lint
+      working-directory: frontend
+
+    - name: Linting mobile
+      run: |
+        npm ci
+        npm run lint
+      working-directory: mobile
