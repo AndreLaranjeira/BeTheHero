@@ -1,11 +1,11 @@
 // Package imports:
-import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import React from "react";
+import {NavigationContainer} from "@react-navigation/native";
+import {createStackNavigator} from "@react-navigation/stack";
 
 // Component imports:
-import Incidents from './pages/incidents';
-import Detail from './pages/detail';
+import Incidents from "./pages/incidents";
+import Detail from "./pages/detail";
 
 // Stack navigator:
 const AppStack = createStackNavigator();

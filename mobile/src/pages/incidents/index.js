@@ -1,17 +1,17 @@
 // Package imports:
-import React, {useEffect, useState} from 'react';
-import {Feather} from '@expo/vector-icons';
-import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React, {useEffect, useState} from "react";
+import {Feather} from "@expo/vector-icons";
+import {FlatList, Image, Text, TouchableOpacity, View} from "react-native";
+import {useNavigation} from "@react-navigation/native";
 
 // Module imports:
-import api from '../../services/api';
+import api from "../../services/api";
 
 // Style imports:
-import styles from './styles';
+import styles from "./styles";
 
 // Asset imports:
-import logoImg from '../../assets/logo.png';
+import logoImg from "../../assets/logo.png";
 
 // Component:
 export default function Incidents() {
@@ -36,23 +36,23 @@ export default function Incidents() {
     // Request received. Begin loading.
     setLoadingIncidentPage(true);
 
-    const response = await api.get('incidents', {
+    const response = await api.get("incidents", {
       params: {
         page: incidentPage
       }
     });
 
     setIncidents([...incidents, ...response.data]);
-    setIncidentCount(response.headers['x-total-count']);
+    setIncidentCount(response.headers["x-total-count"]);
 
     // Request finished. Adjust variables.
     setIncidentPage(incidentPage + 1);
     setLoadingIncidentPage(false);
-  };
+  }
 
   function navigateToDetail(incident) {
-    navigation.navigate('Detail', {incident});
-  };
+    navigation.navigate("Detail", {incident});
+  }
 
   // Page effects.
   useEffect(() => {
@@ -85,8 +85,8 @@ export default function Incidents() {
             <Text style={styles.incidentValue}>{incident.TITLE}</Text>
             <Text style={styles.incidentProperty}>Value:</Text>
             <Text style={styles.incidentValue}>
-              {Intl.NumberFormat('en-US', {style: "currency", currency: "USD"})
-               .format(incident.VALUE)}
+              {Intl.NumberFormat("en-US", {style: "currency", currency: "USD"})
+                .format(incident.VALUE)}
             </Text>
             <TouchableOpacity
               style={styles.detailsButton}
