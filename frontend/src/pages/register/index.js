@@ -41,7 +41,7 @@ export default function Register() {
       alert(`Your access passkey: ${response.data.passkey}`);
       history.push("/");
     } catch (err) {
-      alert("Error on registration! Please try again.");
+      alert(`Error on registration! Please try again.``);
     }
 
   }

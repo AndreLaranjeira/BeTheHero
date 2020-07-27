@@ -70,7 +70,7 @@ module.exports = {
 
     // Total incident count.
     const [incident_count] = await connection("INCIDENTS").count();
-    response.header("X-Total-Count", incident_count["count(*)"]);
+    //response.header("X-Total-Count", incident_count["count(*)"]);
 
     // Incident data.
     const incidents = await connection("INCIDENTS")

@@ -48,11 +48,11 @@ export default function Incidents() {
     // Request finished. Adjust variables.
     setIncidentPage(incidentPage + 1);
     setLoadingIncidentPage(false);
-  }
+  };
 
   function navigateToDetail(incident) {
     navigation.navigate("Detail", {incident});
-  }
+  };
 
   // Page effects.
   useEffect(() => {
@@ -99,5 +99,5 @@ export default function Incidents() {
         )}
       />
     </View>
-  );
+  )
 }

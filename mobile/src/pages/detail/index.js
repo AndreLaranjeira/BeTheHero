@@ -23,7 +23,7 @@ export default function Detail() {
   // Constants.
   const caseMessage = `Hello, ${incident.NGO_NAME}. I am contacting you ` +
     `because I would like to help you on the case "${incident.TITLE}", which ` +
-    "is valued at " +
+    `is valued at ` +
     `${Intl.NumberFormat("en-US", {style: "currency", currency: "USD"})
       .format(incident.VALUE)}.`;
 
